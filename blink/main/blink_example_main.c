@@ -15,6 +15,12 @@
 #include "led_strip.h"
 #include "sdkconfig.h"
 #include "blink smarter.h"      // or don't... +
+#include "me"
+#include "chatGPT"
+// Omg, I worked so much!
+
+DONE, BITCHES!!!
+no comment too.
 
 static const char *TAG = "example";
 
