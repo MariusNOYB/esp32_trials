@@ -68,6 +68,9 @@ static void configure_led(void)
     led_strip_clear(led_strip);
 }
 
+static void newFeature() {
+    // This is the new feature developed on the fork repo
+}
 #elif CONFIG_BLINK_LED_GPIO
 
 static void blink_led(void)
