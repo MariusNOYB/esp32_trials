@@ -75,6 +75,7 @@ static void blink_led(void)
     /* Set the GPIO level according to the state (LOW or HIGH)*/
     gpio_set_level(BLINK_GPIO, s_led_state);
     // This is also needed for the new feature
+    // Keep working on master's independent feature
 }
 
 static void configure_led(void)
