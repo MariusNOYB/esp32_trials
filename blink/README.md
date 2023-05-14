@@ -13,6 +13,10 @@ The `led_strip` is installed via [component manager](main/idf_component.yml).
 
 Before project configuration and build, be sure to set the correct chip target using `idf.py set-target <chip_name>`.
 
+## Extra feature
+
+Extra features are documented here
+
 ### Hardware Required
 
 * A development board with Espressif SoC (e.g., ESP32-DevKitC, ESP-WROVER-KIT, etc.)

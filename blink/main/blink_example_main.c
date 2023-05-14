@@ -6,7 +6,6 @@
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
 */
-// I'm gonna try my own version of smartness now!
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -14,13 +13,6 @@
 #include "esp_log.h"
 #include "led_strip.h"
 #include "sdkconfig.h"
-#include "blink smarter.h"      // or don't... +
-#include "me"
-#include "chatGPT"
-// Omg, I worked so much!
-
-DONE, BITCHES!!!
-no comment too.
 
 static const char *TAG = "example";
 
@@ -38,6 +30,17 @@ static led_strip_handle_t led_strip;
 static void blink_led(void)
 {
     /* If the addressable LED is enabled */
+    if (s_led_state) {
+        /* Set the LED pixel using RGB from 0 (0%) to 255 (100%) for each color */
+        led_strip_set_pixel(led_strip, 0, 16, 16, 16);
+        /* Refresh the strip to send data */
+        led_strip_refresh(led_strip);
+    } else {
+        /* Set all LED off to clear all pixels */
+        led_strip_clear(led_strip);
+    }
+    return;
+     /* This is a new feature, beatch! */
     if (s_led_state) {
         /* Set the LED pixel using RGB from 0 (0%) to 255 (100%) for each color */
         led_strip_set_pixel(led_strip, 0, 16, 16, 16);
@@ -71,6 +74,7 @@ static void blink_led(void)
 {
     /* Set the GPIO level according to the state (LOW or HIGH)*/
     gpio_set_level(BLINK_GPIO, s_led_state);
+    // This is also needed for the new feature
 }
 
 static void configure_led(void)
